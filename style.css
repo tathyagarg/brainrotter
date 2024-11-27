@@ -1,0 +1,113 @@
+:root {
+  --bg-color: #1e201e;
+  --text: #fff;
+}
+
+* {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: var(--text);
+}
+
+body {
+  width: 75%;
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  font-weight: 700;
+}
+
+#bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  background: linear-gradient(90deg,red, orange, yellow, green, blue, indigo, violet,indigo,blue, green,yellow,orange,red, red); 
+  background-size: 1000% 100%;  
+  animation: create-rainbow-gradient-shift 60s ease infinite;
+
+  z-index: -1;
+
+  margin: 0 auto;
+}
+
+@keyframes create-rainbow-gradient-shift{
+    0%{background-position:0% 50%}
+    100%{background-position:100% 100%}
+}
+
+#real-body {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 100px 0 0 0;
+}
+
+textarea {
+  padding: 10px;
+  resize: none;
+  width: 30vw;
+
+  font-size: 1.5em;
+}
+
+textarea, button, #output {
+  background-color: #2e302e;
+}
+
+button {
+  border: none;
+  margin: 1.5em;
+  font-size: 2em;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  gap: 100px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#left, #right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#left p, #right p {
+  width: 100%;
+  text-align: left;
+}
+
+#left > textarea, #output {
+  height: 100%;
+
+  border-radius: 10px;
+}
+
+#output, textarea {
+  border: 1px solid white;
+}
+
+#output {
+  word-wrap: break-word;
+  overflow: scroll;
+  width: 30vw;
+  padding: 10px;
+  font-size: 1.5em;
+
+  text-align: left;
+}
+
+h1 {
+  margin: 0;
+}
